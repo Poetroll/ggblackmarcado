@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acesso Imediato</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0e0e0e;
+    color:white;
+}
+.hero{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(180deg,#000,#121212);
+}
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+.preco{
+    font-size:32px;
+    color:#00ff00;
+    font-weight:bold;
+    margin:15px 0;
+}
+.botao{
+    background:#00ff00;
+    color:black;
+    padding:16px 28px;
+    border-radius:10px;
+    font-weight:bold;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:15px;
+}
+section{
+    padding:40px 20px;
+    max-width:900px;
+    margin:auto;
+}
+.box{
+    background:#181818;
+    padding:20px;
+    border-radius:12px;
+    margin-top:15px;
+}
+.center{text-align:center}
+.timer{
+    color:#ff4444;
+    font-weight:bold;
+    margin-top:10px;
+}
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#00ff00;
+    color:black;
+    padding:14px 18px;
+    border-radius:40px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.popup{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    background:#1b1b1b;
+    padding:10px 15px;
+    border-radius:10px;
+    font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+    <h1>🔥 Liberação imediata após o pagamento</h1>
+    <p>Receba tudo automaticamente no seu email.</p>
+    <div class="preco">R$ 19,90</div>
+
+    <div class="timer">
+        Promoção acaba em: <span id="tempo"></span>
+    </div>
+
+    <a class="botao" href="https://pay.kiwify.com.br/i2QG5KH" target="_blank">
+        QUERO COMPRAR AGORA
+    </a>
+</div>
+
+<section>
+    <h2>📦 O que está incluso</h2>
+    <div class="box">
+        ✔ Conteúdo completo<br>
+        ✔ Atualizações futuras<br>
+        ✔ Acesso vitalício<br>
+        ✔ Suporte
+    </div>
+
+    <div class="center">
+        <a class="botao" href="https://pay.kiwify.com.br/i2QG5KH" target="_blank">
+            Garantir meu acesso
+        </a>
+    </div>
+</section>
+
+<section>
+    <h2>🎁 Bônus especiais</h2>
+    <div class="box">
+        Comprando hoje você ainda recebe materiais extras gratuitos.
+    </div>
+</section>
+
+<section>
+    <h2>💬 Avaliações</h2>
+    <div class="box">
+        ⭐⭐⭐⭐⭐ Excelente, recomendo.<br><br>
+        ⭐⭐⭐⭐⭐ Entrega rápida demais.<br><br>
+        ⭐⭐⭐⭐⭐ Melhor investimento que fiz.
+    </div>
+</section>
+
+<section class="center">
+    <h2>🛡 Compra segura</h2>
+    <div class="box">
+        Você tem 7 dias de garantia para pedir reembolso caso não goste.
+    </div>
+
+    <a class="botao" href="https://pay.kiwify.com.br/i2QG5KH" target="_blank">
+        Comprar sem risco
+    </a>
+</section>
+
+<section>
+    <h2>❓ Perguntas frequentes</h2>
+    <div class="box">
+        <b>Quando recebo?</b><br>
+        Logo após a confirmação do pagamento.<br><br>
+
+        <b>Como chega?</b><br>
+        No seu email automaticamente.<br><br>
+
+        <b>Tenho acesso por quanto tempo?</b><br>
+        Vitalício.
+    </div>
+</section>
+
+<div class="popup" id="popup">
+Alguém acabou de comprar 👀
+</div>
+
+<a class="whatsapp" href="https://wa.me/SEUNUMERO" target="_blank">
+WhatsApp
+</a>
+
+<script>
+// contador 20 minutos
+var tempo = 20 * 60;
+setInterval(function(){
+    var m = Math.floor(tempo/60);
+    var s = tempo%60;
+    document.getElementById("tempo").innerHTML = m+"m "+s+"s";
+    if(tempo>0) tempo--;
+},1000);
+
+// nomes comprando
+var nomes = ["Lucas","Ana","Pedro","Mariana","Carlos","Julia"];
+setInterval(function(){
+    var n = nomes[Math.floor(Math.random()*nomes.length)];
+    document.getElementById("popup").innerHTML = n+" acabou de comprar 👀";
+},6000);
+</script>
+
+</body>
+</html>
